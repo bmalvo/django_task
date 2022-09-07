@@ -16,11 +16,11 @@ Including another URLconf
 from cgitb import html
 from django.contrib import admin
 from django.urls import path, include
+from users.views import AddUser
 from users.views import base_view
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', base_view, name='base'),
-    path('users/', include('users.urls'))
+    path('sign-up/', AddUser.as_view(), name='sign_up'),
+    
 ]
